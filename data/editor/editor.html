@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/2316/2316109.png">
+    <title>Editor</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <div class="toolbar">
+        <button onclick="format('bold')"><b>Fett</b></button>
+        <button onclick="format('italic')"><i>Kursiv</i></button>
+        <button onclick="format('underline')"><u>Unterstrichen</u></button>
+        <label for="fontSize">Schriftgröße:</label>
+        <select id="fontSize" onchange="changeFontSize()">
+            <option value="1">1pt</option>
+            <option value="2">6pt</option>
+            <option value="3">10pt</option>
+            <option value="4" selected>11pt</option>
+            <option value="5">13pt</option>
+            <option value="6">16pt</option>
+            <option value="7">18pt</option>
+            <option value="8">24pt</option>
+            <option value="9">32pt</option>
+            <option value="10">48pt</option>
+        </select>
+        <label for="fontColor">Schriftfarbe:</label>
+        <input type="color" id="fontColor" onchange="changeFontColor()">
+        <button onclick="downloadAsJSON()">Als JSON speichern</button>
+        <label for="fileInput"></label>
+        <input type="file" id="fileInput" accept=".json" onchange="loadJSON()">
+        <!-- <button onclick="downloadAsText()">Als Text speichern</button> -->
+        <button onclick="undo()">Undo</button>
+        <button onclick="redo()">Redo</button>
+        <!-- <button onclick="clearFormatting()">Formatierung entfernen</button> -->
+        <button onclick="alignText('left')">Links</button>
+        <button onclick="alignText('center')">Zentriert</button>
+        <button onclick="alignText('right')">Rechts</button>
+        <label for="linkURL">Link einfügen:</label>
+        <input type="text" id="linkURL" placeholder="URL">
+        <button onclick="insertLink()">Einfügen</button>
+        <!-- <button onclick="preview()">Vorschau</button> -->
+    </div>
+    <div id="editorContainer">
+        <div id="editor" contenteditable="true"></div>
+    </div>
+    <div class="status-bar">
+        <div>Wörter: <span id="wordCount">0</span></div>
+        <div>Zeichen: <span id="charCount">0</span></div>
+    </div>
+    <script src="editor.js"></script>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'z') {
+                undo();
+            } else if (event.ctrlKey && (event.key === 'y' || event.key === 'Z')) {
+                redo();
+            }
+        });
+    </script>
+</body>
+</html>
