@@ -89,7 +89,7 @@ current_platform_color = color_palette[current_color_index]
 score = 0  # Score initialisieren
 last_score = 0  # Letzten Score initialisieren
 high_score = 0  # Höchsten Score initialisieren
-yellow_platforms_touched = 0  # Anzahl der berührten gelben Plattformen
+coins_collected = 0  # Anzahl der berührten gelben Plattformen
 
 def draw_text(text, font, color, surface, x, y):
     textobj = font.render(text, True, color)
@@ -98,7 +98,7 @@ def draw_text(text, font, color, surface, x, y):
     surface.blit(textobj, textrect)
 
 def initialize_game():
-    global player, velocity_y, platforms, can_jump, current_color_index, current_platform_color, score, yellow_balls, yellow_platforms_touched
+    global player, velocity_y, platforms, can_jump, current_color_index, current_platform_color, score, yellow_balls, coins_collected
     player = pygame.Rect(WIDTH // 2, HEIGHT - 100 - player_size, player_size, player_size)
     velocity_y = 0
     platforms = [pygame.Rect(WIDTH // 2 - platform_width // 2, HEIGHT - 100, platform_width, platform_height)]
@@ -113,7 +113,7 @@ def initialize_game():
     current_color_index = 0
     current_platform_color = color_palette[current_color_index]
     yellow_balls = []  # Liste für gelbe Kugeln zurücksetzen
-    yellow_platforms_touched = 0  # Zurücksetzen der Anzahl berührter gelber Plattformen
+    coins_collected = 0  # Zurücksetzen der Anzahl berührter gelber Plattformen
 
 initialize_game()
 
@@ -167,7 +167,7 @@ while running:
         for ball in yellow_balls[:]:
             if player.colliderect(ball['rect']):
                 yellow_balls.remove(ball)
-                yellow_platforms_touched += 1
+                coins_collected += 1
 
         # Plattformen bewegen
         for platform in platforms:
@@ -219,7 +219,7 @@ while running:
             draw_text('Game Over', font, RED, screen, WIDTH // 2, HEIGHT // 2)  # Farbe zu Rot geändert
             draw_text(f'Last Score: {last_score}', small_font, BLACK, screen, WIDTH // 2, HEIGHT // 2 + 60)
             draw_text(f'High Score: {high_score}', small_font, BLACK, screen, WIDTH // 2, HEIGHT // 2 + 100)
-            draw_text(f'Yellow Platforms Touched: {yellow_platforms_touched}', small_font, BLACK, screen, WIDTH // 2, HEIGHT // 2 + 140)
+            draw_text(f'Coins Collected: {coins_collected}', small_font, BLACK, screen, WIDTH // 2, HEIGHT // 2 + 140)
             draw_text('Press Space to Restart', small_font, BLACK, screen, WIDTH // 2, HEIGHT // 2 + 180)
         else:
             draw_text('Press Space to Start', font, BLACK, screen, WIDTH // 2, HEIGHT // 2)
