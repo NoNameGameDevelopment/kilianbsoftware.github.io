@@ -182,14 +182,14 @@ section {
     display: table-row-group;
 }
 
-/* Anpassungen für kleine Bildschirme (z. B. Handys) */
+/* CSS für kleine Bildschirme (z. B. Handys) */
 @media (max-width: 768px) {
-    /* Alle Container, die die Bilder enthalten, auf volle Breite setzen */
+    /* Alle Container auf volle Breite setzen */
     .container {
         width: 100%;
     }
 
-    /* Flex-Layout für die Bilder aufheben, damit sie untereinander angezeigt werden */
+    /* Flex-Layout für die Bilder aufheben und zentrieren */
     section#vergleich .divTableRow {
         display: block;
         margin-bottom: 20px; /* Abstand zwischen den einzelnen Bildern */
@@ -198,5 +198,12 @@ section {
     /* Bilder innerhalb jedes Containers zentrieren */
     section#vergleich .divTableCell {
         text-align: center;
+    }
+
+    /* Bilder auf 100% der Container-Breite setzen */
+    section#vergleich img {
+        width: 100%;
+        height: auto; /* Automatische Anpassung der Höhe */
+        max-width: 100%; /* Maximale Breite auf Container-Breite begrenzen */
     }
 }
