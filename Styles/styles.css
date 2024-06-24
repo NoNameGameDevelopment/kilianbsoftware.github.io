@@ -1,0 +1,393 @@
+/* Allgemeine Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden; /* Entfernt den horizontalen Scrollbalken */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f4; /* Track color */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #444; /* Scrollbar color */
+    border-radius: 10px;
+    border: 3px solid #f4f4f4; /* Space around scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #e8491d; /* Scrollbar color on hover */
+}
+
+/* Rest of your CSS */
+header {
+    background: #444;
+    color: #fff;
+    padding: 15px 0;
+    border-bottom: 3px solid #1d1d1d;
+    text-align: center; /* Center align header content */
+}
+
+header .container {
+    width: 80%;
+    margin: auto;
+}
+
+header #branding {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center; /* Center align the branding */
+}
+
+header nav {
+    display: flex;
+    justify-content: center; /* Center nav items horizontally */
+    width: 100%; /* Full width */
+}
+
+header ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    position: relative;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #e8491d;
+}
+
+header .dropdown-content {
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    background-color: #555;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 200px;
+    transition: top 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dropdown:hover .dropdown-content {
+    top: 100%;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropbtn {
+    background-color: #444;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #666;
+}
+
+#showcase {
+    min-height: 400px;
+    background: url('../img/background.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: #fff;
+}
+
+#showcase h1 {
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#showcase p {
+    font-size: 20px;
+}
+
+#newsletter {
+    padding: 15px;
+    color: #fff;
+    background: #35424a;
+}
+
+#newsletter h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#newsletter form input[type="email"] {
+    padding: 10px;
+    width: 40%;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+#newsletter form button {
+    padding: 10px;
+    background: #e8491d;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#newsletter form button:hover {
+    background: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f4f4f4;
+    border: #ddd 1px solid;
+}
+
+.section-heading {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.section-content {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.divTable {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableCell, .divTableHead {
+    border: 1px solid #999999;
+    display: table-cell;
+    padding: 8px;
+    text-align: left;
+}
+
+.divTableHead {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.divTableBody {
+    display: table-row-group;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+
+    header li {
+        width: 100%;
+        text-align: center;
+    }
+
+    section#vergleich .divTableRow {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    section#vergleich .divTableCell {
+        text-align: center;
+    }
+
+    section#vergleich img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+#readmore {
+    border-radius: 25px;
+    padding: 4.5px;
+    background-color: #35424a36;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    background-color: #444;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+img {
+    height: 350px;
+    width: 350px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: brightness(90%) contrast(110%) saturate(120%) grayscale(20%);
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+img.grayscale {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+img.grayscale:hover {
+    filter: grayscale(0%);
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.img-container::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.img-container:hover::after {
+    opacity: 1;
+}
+
+.img-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.topnav {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    gap: 10px;
+}
+
+.topnav a {
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.topnav a img {
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+    padding: 4px;
+}
+
+.topnav a .btn-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+}
+
+.topnav a:hover img {
+    opacity: 0.7;
+    transform: scale(1.25);
+}
+
+.topnav a:hover .btn-text {
+    opacity: 1;
+    top: calc(100% + 5px);
+}
