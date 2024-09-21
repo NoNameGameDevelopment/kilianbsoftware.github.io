@@ -1,0 +1,198 @@
+/* styles.css */
+/* Container für Dropdowns in einer Reihe */
+.dropdown-container {
+    display: flex;
+    justify-content: flex-start; /* Buttons nebeneinander ausrichten */
+    gap: 5px; /* 5px Abstand zwischen den Buttons */
+    flex-wrap: wrap;
+}
+
+/* Grundlegendes Dropdown-Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: #333;
+}
+
+.dropbtn {
+    background-color: #3f3e3e;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 0; /* Verhindert abgerundete Kanten, damit die Buttons direkt aneinander anschließen */
+    font-family: Arial, Helvetica, sans-serif;
+    height: 50px;
+    width: 250px;
+}
+
+/* Standardmäßig ist das Dropdown-Menü versteckt */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px #00000033;
+    z-index: 1;
+}
+
+/* Responsive Design: Für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static; /* Sorgt dafür, dass Dropdowns auf kleinen Bildschirmen korrekt angezeigt werden */
+    }
+    
+    nav {
+        flex-direction: column; /* Ändert die Navigation auf kleinen Bildschirmen auf eine Spalte */
+    }
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht, dass die Navigation in mehreren Zeilen umbrechen kann */
+    justify-content: center; /* Zentriert die Navigationselemente */
+    max-width: 100%; /* Verhindert, dass der Inhalt die Bildschirmbreite überschreitet */
+}
+
+/* Zeige das Dropdown-Menü, wenn der Benutzer den Button überfährt */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styling für die Dropdown-Links */
+.dropdown-content a {
+    background-color: #333;
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Ändere die Hintergrundfarbe der Links beim Überfahren */
+.dropdown-content a:hover {
+    background-color: #494949;
+    color: #ff4500;
+}
+
+/* CSS Reset: entfernt Standardabstände von html und body */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Stellt sicher, dass der Header die gesamte Breite des Bildschirms nutzt */
+    box-sizing: border-box; /* Bezieht Padding und Border in die Breitenberechnung mit ein */
+}
+
+/* Beispiel-Styles für nachfolgenden Inhalt */
+section {
+    padding: 20px;
+    background-color: #fff;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.textbox {
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    margin: 25px;
+    outline: auto;
+    outline-color: #333;
+}
+
+/* Tabelle */
+.divTable {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableCell, .divTableHead {
+    border: 1px solid #999999;
+    display: table-cell;
+    padding: 8px;
+    text-align: left;
+}
+
+.divTableHead {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.divTableBody {
+    display: table-row-group;
+}
+
+/* Button */
+button {
+    outline: auto;
+    outline-color: #000000;
+    border-radius: 25px;
+    width: 125px;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.img-container {
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht Zeilenumbruch */
+    justify-content: center; /* Zentriert die Bilder */
+    gap: 20px; /* Abstand zwischen den Bildern */
+}
+
+.zoom-img {
+    height: 400px;
+    width: 400px;
+    outline: auto;
+    outline-color: #000000;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.zoom-img:hover {
+    transform: scale(1.5);
+    outline-color: #161616;
+}
+
+.img-container img {
+    flex: 1 1 45%; /* Zwei Bilder nebeneinander mit etwas Platz */
+    max-width: 400px; /* Begrenzung der Bildbreite */
+}
