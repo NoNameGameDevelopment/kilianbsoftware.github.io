@@ -73,7 +73,7 @@ nav {
 /* Ändere die Hintergrundfarbe der Links beim Überfahren */
 .dropdown-content a:hover {
     background-color: #494949;
-    color: #ff4500;
+    color: #ffa00a;
 }
 
 /* CSS Reset: entfernt Standardabstände von html und body */
